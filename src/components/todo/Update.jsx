@@ -8,7 +8,7 @@ const Update = ({ display, update }) => {
     title: update.title,
     description: update.description,
   });
-
+  console.log(update)
   const change = (e) => {
     const { name, value } = e.target;
     setInputs({ ...Inputs, [name]: value });
