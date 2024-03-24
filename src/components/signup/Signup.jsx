@@ -38,22 +38,22 @@ const Signup = () => {
     //   });
       try {
         const response = await axios.post(`https://taskmanagementbackend-production-9dd5.up.railway.app/api/auth/register`, Inputs);
-        const data = await response.json();
-        console.log(data)
+        // const data = await response;
+        console.log(response);
         setInputs({ email: "", username: "", password: "", age : 1, about : ""});
-        if (response.ok) {
+        if (response.status==201) {
           // Registration successful, redirect to login page
           console.log(' Registration successful, redirect to login page')
-          // window.location.href = '/login';
           history("/signin");
         } else {
           // Registration failed, display error message
-          alert(data.error || 'Registration failed');
+          alert(response.error || 'Registration failed');
         }
+        history("/signin");
       } catch (error) {
         // console.error('Error:', error.response.data.error);
         // alert(`An error occurred. Please try again.`);
-        alert(`${error.response.data.error}`);
+        // alert(`${error.response.data.error}`);
       }
   };
   return (
