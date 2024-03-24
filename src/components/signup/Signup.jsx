@@ -41,7 +41,7 @@ const Signup = () => {
         // const data = await response;
         console.log(response);
         setInputs({ email: "", username: "", password: "", age : 1, about : ""});
-        if (response.status==201) {
+        if (response.status===201) {
           // Registration successful, redirect to login page
           console.log(' Registration successful, redirect to login page')
           history("/signin");
