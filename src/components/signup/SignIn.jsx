@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { authActions } from "../../store";
 
 const SignIn = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const history = useNavigate();
   const [Inputs, setInputs] = useState({
     email: "",
