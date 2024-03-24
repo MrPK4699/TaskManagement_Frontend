@@ -4,11 +4,11 @@ import HeadingComp from "./HeadingComp";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { authActions } from "../../store";
+// import { useDispatch } from "react-redux";
+// import { authActions } from "../../store";
 
 const SignIn = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const history = useNavigate();
   const [Inputs, setInputs] = useState({
     email: "",

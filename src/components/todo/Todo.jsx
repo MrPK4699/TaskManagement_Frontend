@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from "react";
 import "./todo.css";
 import TodoCards from "./TodoCards";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Update from "./Update";
 import axios from "axios";
