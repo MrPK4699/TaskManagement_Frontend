@@ -4,11 +4,11 @@ import HeadingComp from "./HeadingComp";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
-// import { authActions } from "../../store";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../store";
 
 const SignIn = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const history = useNavigate();
   const [Inputs, setInputs] = useState({
     email: "",
@@ -31,7 +31,7 @@ const SignIn = () => {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', response.data.name);
         localStorage.setItem('email', response.data.email);
-        // dispatch(authActions.login());
+        dispatch(authActions.login());
         history("/todo");
       } else {
         // Handle the case where the response does not contain the expected data

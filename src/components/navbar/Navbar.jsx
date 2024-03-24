@@ -2,8 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import { RiContactsBook2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../../store";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
@@ -22,7 +21,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg ">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            <RiContactsBook2Fill /> todo
+            <RiContactsBook2Fill /> Task Manager
           </Link>
 
           <button
@@ -43,7 +42,7 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item mx-2">
+              {/* <li className="nav-item mx-2">
                 <Link
                   className="nav-link active"
                   aria-current="page"
@@ -51,14 +50,14 @@ const Navbar = () => {
                 >
                   About Us
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item mx-2">
                 <Link
                   className="nav-link active"
                   aria-current="page"
                   to="/todo"
                 >
-                  Todo
+                  My Task
                 </Link>
               </li>
               {!isLoggedIn && (
@@ -88,17 +87,30 @@ const Navbar = () => {
                 </>
               )}
               {isLoggedIn && (
-                <div className="d-flex">
-                  <li className="nav-item mx-2" onClick={logout}>
-                    <Link
-                      className="nav-link active btn-nav p-2"
-                      aria-current="page"
-                      to="#"
-                    >
-                      Log Out
-                    </Link>
-                  </li>
-                </div>
+                <>
+                  <div className="d-flex">
+                    <li className="nav-item mx-2">
+                      <Link
+                        className="nav-link active btn-nav p-2"
+                        aria-current="page"
+                        to="#"
+                      >
+                        Profile
+                      </Link>
+                    </li>
+                  </div>
+                  <div className="d-flex">
+                    <li className="nav-item mx-2" onClick={logout}>
+                      <Link
+                        className="nav-link active btn-nav p-2"
+                        aria-current="page"
+                        to="#"
+                      >
+                        Log Out
+                      </Link>
+                    </li>
+                  </div>
+                </>
               )}
             </ul>
           </div>

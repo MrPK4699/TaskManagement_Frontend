@@ -3,13 +3,15 @@
   height: 30px;
 }
 .navbar-brand {
-  color: rgba(240, 0, 0, 0.87);
+  /* color: rgba(240, 0, 0, 0.87); */
+  color: rgba(0, 104, 240, 0.87);
   font-size: 25px;
   font-weight: bold;
 }
 
 .btn-nav {
-  background-color: rgba(240, 0, 0, 0.87);
+  /* background-color: rgba(240, 0, 0, 0.87); */
+  background-color: rgba(0, 104, 240, 0.87);
   border-radius: 5px;
   color: white !important;
   font-weight: bold;
