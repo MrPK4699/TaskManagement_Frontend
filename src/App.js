@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./components/home/Home";
 import Footer from "./components/footer/Footer";
@@ -11,14 +12,14 @@ import { useDispatch } from "react-redux";
 import { authActions } from "./store";
 const App = () => {
   const dispatch = useDispatch();
-  const [kuchbhi, setKuchbhi] = useState('kuch bhi')
-  useEffect(() => {
+  // const [kuchbhi, setKuchbhi] = useState('kuch bhi')
+  // useEffect(() => {
     const id = sessionStorage.getItem("id");
     if (id) {
       dispatch(authActions.login());
     }
-  }, [kuchbhi]);
-
+  // }, [kuchbhi]);
+  // console.log(kuchbhi)
   return (
     <div>
       <Router>
