@@ -1,7 +1,7 @@
 <h1 align="center">Task Manager App</h1>
 
 <p align="center">
-  <img src="https://placeholder.com" alt="Task Manager App Demo" width="800">
+  <img src="#" alt="Task Manager App Demo" width="800">
 </p>
 
 <p align="center">
