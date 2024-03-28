@@ -1,7 +1,7 @@
 <h1 align="center">Task Manager App</h1>
 
 <p align="center">
-  <img src="https://placeholder.com" alt="Task Manager App Demo" width="800">
+  <img src="#" alt="Task Manager App Demo" width="800">
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
   <a href="#features">Features</a> •
   <a href="#technologies-used">Technologies Used</a> •
   <a href="#setup-instructions">Setup Instructions</a> •
-  <a href="#deployment">Deployment</a> •
+  <a href="https://66001dbe79c7fe00080ce38d--taskmanagermrpk4699.netlify.app/">Deployment</a> •
   <a href="#credits">Credits</a>
 </p>
 
