@@ -56,7 +56,7 @@ exports.updateUserProfile = async (req, res) => {
     try {
         const userId = req.user.userID;
         const { username, email, age, about } = req.body;
-        await User.findByIdAndUpdate(userId, { username, email, age, about },{new:true});
+        await User.findByIdAndUpdate(userId, { username, email, age, about }, {new:true});
         res.json({ message: "User profile updated successfully" });
     } catch (error) {
         res.status(500).json({ error: "Internal Server Error" });

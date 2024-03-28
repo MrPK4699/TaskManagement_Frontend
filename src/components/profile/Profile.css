@@ -53,11 +53,3 @@
 .update {
   height: 100%;
 }
-
-.checkbox-label {
-  margin-left: 10px;
-}
-
-.checkbox-label input[type="checkbox"] {
-  margin-right: 5px;
-}

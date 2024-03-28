@@ -4,7 +4,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { GrDocumentUpdate } from "react-icons/gr";
 import axios from "axios";
 
-const TodoCards = ({ title, description, id, delid , display, updateId, toBeUpdate,}) => {
+const TodoCards = ({ title, description, id , isCompleted , display, updateId, toBeUpdate,}) => {
   const deleteTask = async () => {
     try {
       await axios.delete(`https://taskmanagementbackend-production-9dd5.up.railway.app/api/tasks/${id}`, {
@@ -21,8 +21,10 @@ const TodoCards = ({ title, description, id, delid , display, updateId, toBeUpda
   return (
     <div className="p-3 todo-card">
       <div>
-        <h5>{title}</h5>
-        <p className="todo-card-p">{description}...</p>
+        <h5><b>Title : </b>{title}</h5>
+        <p><b>Status : </b> <span style={{color: isCompleted? 'green':'rgb(255, 132, 0)'}}> {isCompleted? 'Complete':'in-progress'} </span> </p>
+        <p className="todo-card-p"><b>Description : </b>{description}</p>
+
       </div>
       <div className="d-flex justify-content-around ">
         <div
@@ -33,7 +35,7 @@ const TodoCards = ({ title, description, id, delid , display, updateId, toBeUpda
             toBeUpdate(updateId);
           }}
         >
-          <GrDocumentUpdate className="card-icons" /> Update
+          <GrDocumentUpdate className="card-icons" style={{color:'blue'}}/> Update
         </div>
         <div
           className="d-flex justify-content-center align-items-center card-icon-head  px-2 py-1 text-danger"

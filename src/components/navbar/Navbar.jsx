@@ -42,15 +42,11 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              {/* <li className="nav-item mx-2">
-                <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/about"
-                >
-                  About Us
+              <li className="nav-item mx-2">
+                <Link className="nav-link active" aria-current="page" to="/about">
+                  About
                 </Link>
-              </li> */}
+              </li>
               <li className="nav-item mx-2">
                 <Link
                   className="nav-link active"
@@ -60,7 +56,7 @@ const Navbar = () => {
                   My Task
                 </Link>
               </li>
-              {!isLoggedIn && (
+              {!isLoggedIn ? 
                 <>
                   <div className="d-flex ">
                     <li className="nav-item mx-2">
@@ -84,16 +80,16 @@ const Navbar = () => {
                       </Link>
                     </li>
                   </div>
-                </>
-              )}
-              {isLoggedIn && (
+                </> :
+              // )}
+              // {isLoggedIn && (
                 <>
                   <div className="d-flex">
                     <li className="nav-item mx-2">
                       <Link
                         className="nav-link active btn-nav p-2"
                         aria-current="page"
-                        to="#"
+                        to="profile"
                       >
                         Profile
                       </Link>
@@ -111,7 +107,7 @@ const Navbar = () => {
                     </li>
                   </div>
                 </>
-              )}
+              }
             </ul>
           </div>
         </div>

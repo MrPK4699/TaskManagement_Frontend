@@ -9,26 +9,20 @@ const About = () => {
         </div>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, ad? Non
-          animi facere vero nostrum qui repudiandae, nihil recusandae amet
-          quisquam dicta quos, praesentium ipsam libero distinctio ea, atque
-          deleniti? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Distinctio rerum modi, velit iusto fuga necessitatibus dicta molestias
-          facere numquam natus quibusdam, error sunt. Eveniet iure modi est
-          recusandae, quasi ut?Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Amet, quae. Atque accusamus explicabo perferendis at
-          illum laudantium eos velit cumque vero, odio illo ipsum hic earum
-          alias cupiditate minima a! <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, ad? Non
-          animi facere vero nostrum qui repudiandae, nihil recusandae amet
-          quisquam dicta quos, praesentium ipsam libero distinctio ea, atque
-          deleniti? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Distinctio rerum modi, velit iusto fuga necessitatibus dicta molestias
-          facere numquam natus quibusdam, error sunt. Eveniet iure modi est
-          recusandae, quasi ut?Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Amet, quae. Atque accusamus explicabo perferendis at
-          illum laudantium eos velit cumque vero, odio illo ipsum hic earum
-          alias cupiditate minima a!
+          Welcome to Task Manager, your ultimate solution for efficient task management.
+          We understand the importance of staying organized and productive, which is why
+            we've created a platform designed to streamline your workflow and enhance productivity.<br/>
+
+          With Task Manager, you can easily prioritize tasks, set deadlines, and track progress—all
+          in one convenient location. Say goodbye to scattered to-do lists and missed deadlines,
+            and hello to a more organized and efficient way of managing your tasks.<br/>
+
+          Our user-friendly interface and intuitive features make it easy to stay on top of your 
+          tasks and projects. Whether you're a busy professional, a student juggling multiple 
+          assignments, or simply someone looking to stay organized in their personal life, Task Manager is here to help.<br/>
+
+          Join the thousands of users who have already experienced the benefits of Task Manager.
+          Start maximizing your productivity and achieving your goals today!
         </p>
       </div>
     </div>

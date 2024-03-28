@@ -18,7 +18,7 @@ const Todo = () => {
     userEmail: localStorage.getItem('email'),
   });
   const [Array, setArray] = useState([]);
-
+// console.log(Array)
   const show = () => {
     document.getElementById("textarea").style.display = "block";
   };
@@ -28,7 +28,7 @@ const Todo = () => {
     setInputs({ ...Inputs, [name]: value });
   };
 
-  const dis = (value) => {
+  const display = (value) => {
     document.getElementById("todo-update").style.display = value;
   };
   const update = (value) => {
@@ -67,19 +67,19 @@ const Todo = () => {
     }
   };
 
-  const deleteTask = async (taskId) => {
-    try {
-      await axios.delete(`https://taskmanagementbackend-production-9dd5.up.railway.app/api/tasks/${taskId}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
-      });
-      const updatedTasks = Array.filter(task => task._id !== taskId);
-      setArray(updatedTasks);
-    } catch (error) {
-      console.error('Error deleting task:', error);
-    }
-  };
+  // const deleteTask = async (taskId) => {
+  //   try {
+  //     await axios.delete(`https://taskmanagementbackend-production-9dd5.up.railway.app/api/tasks/${taskId}`, {
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem('token')}`
+  //       }
+  //     });
+  //     const updatedTasks = Array.filter(task => task._id !== taskId);
+  //     setArray(updatedTasks);
+  //   } catch (error) {
+  //     console.error('Error deleting task:', error);
+  //   }
+  // };
 
   return (
     <>
@@ -125,8 +125,9 @@ const Todo = () => {
                       title={item.title}
                       description={item.description}
                       id={item._id}
-                      delid={deleteTask}
-                      display={dis}
+                      // delid={deleteTask}
+                      isCompleted={item.completed}
+                      display={display}
                       updateId={index}
                       toBeUpdate={update}
                     />
@@ -140,7 +141,7 @@ const Todo = () => {
         <div className="container update">
           {/* Here should go your update component */}
           {/* <Update /> */}
-          <Update display={dis} update={toUpdateArray} />
+          <Update display={display} update={toUpdateArray} />
         </div>
       </div>
     </>
