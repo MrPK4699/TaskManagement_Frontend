@@ -37,7 +37,8 @@ const Signup = () => {
     //     }
     //   });
       try {
-        const response = await axios.post(`https://taskmanagementbackend-production-9dd5.up.railway.app/api/auth/register`, Inputs);
+        // const response = await axios.post(`https://taskmanagementbackend-production-9dd5.up.railway.app/api/auth/register`, Inputs);
+        const response = await axios.post(`https://task-management-backend-beryl.vercel.app//api/auth/register`, Inputs);
         // const data = await response;
         console.log(response);
         setInputs({ email: "", username: "", password: "", age : 1, about : ""});
