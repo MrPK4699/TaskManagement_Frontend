@@ -3,11 +3,13 @@ import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { GrDocumentUpdate } from "react-icons/gr";
 import axios from "axios";
+const URI= process.env.REACT_APP_API_URL;
+
 
 const TodoCards = ({ title, description, id , isCompleted , display, updateId, toBeUpdate,}) => {
   const deleteTask = async () => {
     try {
-      await axios.delete(`https://taskmanagementbackend-production-9dd5.up.railway.app/api/tasks/${id}`, {
+      await axios.delete(`${URI}api/tasks/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

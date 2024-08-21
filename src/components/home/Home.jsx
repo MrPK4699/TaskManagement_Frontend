@@ -11,7 +11,7 @@ const Home = () => {
           Become focused, organized, and calm with <br />
           task Management app. The World's #1 task manager app.
         </p>
-        <button class="home-btn p-2">Make Task List</button>
+        <button className="home-btn p-2">Make Task List</button>
       </div>
     </div>
   );

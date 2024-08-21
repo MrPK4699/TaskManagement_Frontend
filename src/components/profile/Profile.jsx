@@ -164,6 +164,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { GrDocumentUpdate } from "react-icons/gr";
 import './Profile.css'
+const URI= process.env.REACT_APP_API_URL;
+
 
 const Profile = () => {
   const [user, setUser] = useState({
@@ -183,7 +185,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://taskmanagementbackend-production-9dd5.up.railway.app/api/auth/profile`, {
+        const res = await axios.get(`${URI}api/auth/profile`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -206,7 +208,7 @@ const Profile = () => {
 
   const updateProfile = async () => {
     try {
-      await axios.put(`https://taskmanagementbackend-production-9dd5.up.railway.app/api/auth/profile/`, editedUser, {
+      await axios.put(`${URI}api/auth/profile/`, editedUser, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('token')}`

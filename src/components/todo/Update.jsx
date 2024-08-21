@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+const URI= process.env.REACT_APP_API_URL;
+
+
 const Update = ({ display, update }) => {
   const [Inputs, setInputs] = useState({
     title: "",
@@ -26,7 +29,7 @@ const Update = ({ display, update }) => {
   const submit = async () => {
     try {
       await axios.put(
-        `https://taskmanagementbackend-production-9dd5.up.railway.app/api/tasks/${update._id}`,
+        `${URI}api/tasks/${update._id}`,
         Inputs,
         {
           headers: {

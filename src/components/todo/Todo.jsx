@@ -8,6 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 import Update from "./Update";
 import axios from "axios";
 
+const URI= process.env.REACT_APP_API_URL;
+
+
 let toUpdateArray = [];
 
 
@@ -38,7 +41,7 @@ const Todo = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('https://taskmanagementbackend-production-9dd5.up.railway.app/api/tasks', {
+        const response = await axios.get(`${URI}api/tasks`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -54,7 +57,7 @@ const Todo = () => {
 
   const createTask = async () => {
     try {
-      const response = await axios.post('https://taskmanagementbackend-production-9dd5.up.railway.app/api/tasks', Inputs, {
+      const response = await axios.post(`${URI}api/tasks`, Inputs, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('token')}`
