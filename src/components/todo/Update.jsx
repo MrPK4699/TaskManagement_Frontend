@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 const URI= process.env.REACT_APP_API_URL;
 
 
-const Update = ({ display, update }) => {
+const Update = ({ showUpdatePanel, update ,fnc4fetch}) => {
   const [Inputs, setInputs] = useState({
     title: "",
     description: "",
@@ -26,7 +26,8 @@ const Update = ({ display, update }) => {
     setInputs({ ...Inputs, [name]: value });
   };
 
-  const submit = async () => {
+  const submit = async (e) => {
+    e.preventDefault();
     try {
       await axios.put(
         `${URI}api/tasks/${update._id}`,
@@ -39,11 +40,8 @@ const Update = ({ display, update }) => {
         }
       );
       toast.success("Task updated successfully");
-      // setInputs({
-      //   title: "",
-      //   description: "",
-      // });
-      display("none");
+      showUpdatePanel(false);
+      fnc4fetch();
     } catch (error) {
       console.error("Error updating task:", error);
       toast.error("Error updating task");
@@ -88,7 +86,7 @@ const Update = ({ display, update }) => {
           className="btn btn-danger my-4 mx-3"
           onClick={() => {
             setInputs({});
-            display("none");
+            showUpdatePanel(false);
           }}
         >
           Close

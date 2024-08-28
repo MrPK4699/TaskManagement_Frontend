@@ -206,7 +206,8 @@ const Profile = () => {
     setEditedUser({ ...editedUser, [name]: value });
   };
 
-  const updateProfile = async () => {
+  const updateProfile = async (e) => {
+    e.preventDefault();
     try {
       await axios.put(`${URI}api/auth/profile/`, editedUser, {
         headers: {

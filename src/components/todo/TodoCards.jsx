@@ -2,11 +2,12 @@
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { GrDocumentUpdate } from "react-icons/gr";
+import { toast } from "react-toastify";
 import axios from "axios";
 const URI= process.env.REACT_APP_API_URL;
 
 
-const TodoCards = ({ title, description, id , isCompleted , display, updateId, toBeUpdate,}) => {
+const TodoCards = ({ title, description, id , isCompleted , showUpdatePanel, updateId, toBeUpdate, fnc4fetch}) => {
   const deleteTask = async () => {
     try {
       await axios.delete(`${URI}api/tasks/${id}`, {
@@ -14,6 +15,8 @@ const TodoCards = ({ title, description, id , isCompleted , display, updateId, t
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       });
+      toast.success("Task deleted successfully");
+      fnc4fetch();
       // delid(id);
     } catch (error) {
       console.error('Error deleting task:', error);
@@ -33,17 +36,16 @@ const TodoCards = ({ title, description, id , isCompleted , display, updateId, t
           className="d-flex justify-content-center align-items-center card-icon-head px-2 py-1 "
           onClick={() => {
             // Add update functionality here if needed
-            display("block");
             toBeUpdate(updateId);
           }}
         >
-          <GrDocumentUpdate className="card-icons" style={{color:'blue'}}/> Update
+          <GrDocumentUpdate className="card-icons" /> Update
         </div>
         <div
           className="d-flex justify-content-center align-items-center card-icon-head  px-2 py-1 text-danger"
           onClick={deleteTask}
         >
-          <AiFillDelete className="card-icons del" /> Delete
+          <AiFillDelete className="card-icons del"  style={{ color: 'red' }} /> Delete
         </div>
       </div>
     </div>

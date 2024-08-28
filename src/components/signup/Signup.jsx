@@ -23,41 +23,21 @@ const Signup = () => {
   };
   const submit = async (e) => {
     e.preventDefault();
-    // await axios
-    //   .post(`http://localhost:5000/api/auth/register`, Inputs)
-    //   .then((response) => {
-    //     if (response.data.msg === "User Already Exists") {
-    //       alert(response.data.message);
-    //     } else {
-    //       alert(response.data.message);
-    //       setInputs({
-    //         email: "",
-    //         username: "",
-    //         password: "",
-    //         age : 1,
-    //         about : ""
-    //       });
-    //       history("/signin");
-    //     }
-    //   });
       try {
         // const response = await axios.post(`https://taskmanagementbackend-production-9dd5.up.railway.app/api/auth/register`, Inputs);
         const response = await axios.post(`${URI}api/auth/register`, Inputs);
-        // const data = await response;
         console.log(response);
         setInputs({ email: "", username: "", password: "", age : 1, about : ""});
         if (response.status===201) {
-          // Registration successful, redirect to login page
           console.log(' Registration successful, redirect to login page')
           history("/signin");
         } else {
-          // Registration failed, display error message
           alert(response.error || 'Registration failed');
         }
         history("/signin");
       } catch (error) {
         // console.error('Error:', error.response.data.error);
-        // alert(`An error occurred. Please try again.`);
+        alert(`An error occurred. Please try again.`);
         // alert(`${error.response.data.error}`);
       }
   };

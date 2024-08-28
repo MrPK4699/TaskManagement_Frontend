@@ -7,7 +7,7 @@ import { authActions } from "../../store";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const history = useNavigate();
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn) || localStorage.getItem('token');
   const dispatch = useDispatch();
   const logout = () => {
     localStorage.removeItem('token');
@@ -48,34 +48,22 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item mx-2">
-                <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/todo"
-                >
-                  My Task
+                <Link className="nav-link active" aria-current="page" to="/todo">
+                  My Tasks
                 </Link>
               </li>
               {!isLoggedIn ? 
                 <>
                   <div className="d-flex ">
                     <li className="nav-item mx-2">
-                      <Link
-                        className="nav-link active btn-nav p-2"
-                        aria-current="page"
-                        to="/signup"
-                      >
+                      <Link className="nav-link active btn-nav p-2" aria-current="page" to="/signup">
                         SignUp
                       </Link>
                     </li>
                   </div>
                   <div className="d-flex my-lg-0 my-2 ">
                     <li className="nav-item mx-2">
-                      <Link
-                        className="nav-link active btn-nav p-2"
-                        aria-current="page"
-                        to="/signin"
-                      >
+                      <Link className="nav-link active btn-nav p-2" aria-current="page" to="/signin">
                         SignIn
                       </Link>
                     </li>
@@ -86,22 +74,14 @@ const Navbar = () => {
                 <>
                   <div className="d-flex">
                     <li className="nav-item mx-2">
-                      <Link
-                        className="nav-link active btn-nav p-2"
-                        aria-current="page"
-                        to="profile"
-                      >
+                      <Link className="nav-link active btn-nav p-2" aria-current="page" to="profile">
                         Profile
                       </Link>
                     </li>
                   </div>
                   <div className="d-flex">
                     <li className="nav-item mx-2" onClick={logout}>
-                      <Link
-                        className="nav-link active btn-nav p-2"
-                        aria-current="page"
-                        to="#"
-                      >
+                      <Link className="nav-link active btn-nav p-2" aria-current="page" to="#">
                         Log Out
                       </Link>
                     </li>

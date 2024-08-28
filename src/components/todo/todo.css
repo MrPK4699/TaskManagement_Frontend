@@ -1,7 +1,6 @@
 .todo {
   width: 100%;
-  min-height: 100vh;
-  max-height: auto;
+  min-height: 80vh;
   position: relative;
 }
 .todo-inputs {
@@ -40,9 +39,9 @@
 
 .todo-update {
   width: 100%;
-  min-height: 90vh;
-  position: absolute;
-  position: fixed;
+  min-height: 80vh;
+  /* position: absolute;
+  position: fixed; */
   top: 80px;
   left: 0px;
   background-color: rgb(205, 251, 255);
