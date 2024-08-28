@@ -8,7 +8,7 @@
   <a href="#about">About</a> •
   <a href="#features">Features</a> •
   <a href="#technologies-used">Technologies Used</a> •
-  <a href="https://66001dbe79c7fe00080ce38d--taskmanagermrpk4699.netlify.app/">Deployment</a> •
+  <a href="https://66001dbe79c7fe00080ce38d--taskmanagermrpk4699.netlify.app/">Deployment</a>
 </p>
 
 ---
