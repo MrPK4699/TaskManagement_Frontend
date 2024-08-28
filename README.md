@@ -8,9 +8,7 @@
   <a href="#about">About</a> •
   <a href="#features">Features</a> •
   <a href="#technologies-used">Technologies Used</a> •
-  <a href="#setup-instructions">Setup Instructions</a> •
   <a href="https://66001dbe79c7fe00080ce38d--taskmanagermrpk4699.netlify.app/">Deployment</a> •
-  <a href="#credits">Credits</a>
 </p>
 
 ---
@@ -40,7 +38,6 @@ You can access the live demo of the Task Manager App [here](https://66001dbe79c7
 - **Frontend:**
   - React.js
   - React Router
-  - Redux Toolkit for state management
   - Axios for making HTTP requests
   - React Icons for icons
 
@@ -50,3 +47,4 @@ You can access the live demo of the Task Manager App [here](https://66001dbe79c7
   - MongoDB for database
   - Mongoose ODM for MongoDB
   - JSON Web Tokens (JWT) for authentication
+  - bcrypt  for password hashing
